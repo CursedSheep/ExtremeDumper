@@ -7,7 +7,9 @@ before_build:
 build_script:
 - cmd: >-
     msbuild "C:\projects\extremedumper\ExtremeDumper.sln" /p:Configuration=Release /p:Platform=x86 /verbosity:normal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
     msbuild "C:\projects\extremedumper\ExtremeDumper.sln" /p:Configuration=Release /p:Platform=x64 /verbosity:normal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
     msbuild "C:\projects\extremedumper\ExtremeDumper.sln" /p:Configuration=Release /p:Platform="Any CPU" /verbosity:normal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 after_build:
 - cmd: 7z a bin\Release\ExtremeDumper.zip bin\Release\*.exe
