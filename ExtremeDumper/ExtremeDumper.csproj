@@ -10,6 +10,10 @@
 		<OutputPath>..\bin\$(Configuration)</OutputPath>
 	</PropertyGroup>
 	<ItemGroup>
+		<EmbeddedResource Include="..\ExtremeDumper.LoaderHook\bin\Win32\$(Configuration)\ExtremeDumper.LoaderHook.dll" Link="costura32\ExtremeDumper.LoaderHook.dll" />
+		<EmbeddedResource Include="..\ExtremeDumper.LoaderHook\bin\x64\$(Configuration)\ExtremeDumper.LoaderHook.dll" Link="costura64\ExtremeDumper.LoaderHook.dll" />
+	</ItemGroup>
+	<ItemGroup>
 		<PackageReference Include="Costura.Fody" Version="4.1.0" />
 		<PackageReference Include="dnlib" Version="3.4.0" />
 		<PackageReference Include="Microsoft.Diagnostics.Runtime" Version="1.1.142101" />
@@ -17,7 +21,7 @@
 		<PackageReference Include="Ookii.Dialogs.WinForms" Version="4.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\ExtremeDumper.AntiAntiDump\ExtremeDumper.AntiAntiDump.csproj" />
+		<ProjectReference Include="..\ExtremeDumper.AntiAntiDump\ExtremeDumper.AntiAntiDump.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Update="Forms\Resources.Designer.cs">
